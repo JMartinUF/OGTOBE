@@ -15,269 +15,202 @@ What I did:
  - First push. 
 
 ## Day 2:
-
-*Content for Day 2*
+What I did:
 
 ## Day 3:
-
-*Content for Day 3*
+What I did:
 
 ## Day 4:
-
-*Content for Day 4*
+What I did:
 
 ## Day 5:
-
-*Content for Day 5*
+What I did:
 
 ## Day 6:
-
-*Content for Day 6*
+What I did:
 
 ## Day 7:
-
-*Content for Day 7*
+What I did:
 
 ## Day 8:
-
-*Content for Day 8*
+What I did:
 
 ## Day 9:
-
-*Content for Day 9*
+What I did:
 
 ## Day 10:
-
-*Content for Day 10*
+What I did:
 
 ## Day 11:
-
-*Content for Day 11*
+What I did:
 
 ## Day 12:
-
-*Content for Day 12*
+What I did:
 
 ## Day 13:
-
-*Content for Day 13*
+What I did:
 
 ## Day 14:
-
-*Content for Day 14*
+What I did:
 
 ## Day 15:
-
-*Content for Day 15*
+What I did:
 
 ## Day 16:
-
-*Content for Day 16*
+What I did:
 
 ## Day 17:
-
-*Content for Day 17*
+What I did:
 
 ## Day 18:
-
-*Content for Day 18*
+What I did:
 
 ## Day 19:
-
-*Content for Day 19*
+What I did:
 
 ## Day 20:
-
-*Content for Day 20*
+What I did:
 
 ## Day 21:
-
-*Content for Day 21*
+What I did:
 
 ## Day 22:
-
-*Content for Day 22*
+What I did:
 
 ## Day 23:
-
-*Content for Day 23*
+What I did:
 
 ## Day 24:
-
-*Content for Day 24*
+What I did:
 
 ## Day 25:
-
-*Content for Day 25*
+What I did:
 
 ## Day 26:
-
-*Content for Day 26*
+What I did:
 
 ## Day 27:
-
-*Content for Day 27*
+What I did:
 
 ## Day 28:
-
-*Content for Day 28*
+What I did:
 
 ## Day 29:
-
-*Content for Day 29*
+What I did:
 
 ## Day 30:
-
-*Content for Day 30*
+What I did:
 
 ## Day 31:
-
-*Content for Day 31*
+What I did:
 
 ## Day 32:
-
-*Content for Day 32*
+What I did:
 
 ## Day 33:
-
-*Content for Day 33*
+What I did:
 
 ## Day 34:
-
-*Content for Day 34*
+What I did:
 
 ## Day 35:
-
-*Content for Day 35*
+What I did:
 
 ## Day 36:
-
-*Content for Day 36*
+What I did:
 
 ## Day 37:
-
-*Content for Day 37*
+What I did:
 
 ## Day 38:
-
-*Content for Day 38*
+What I did:
 
 ## Day 39:
-
-*Content for Day 39*
+What I did:
 
 ## Day 40:
-
-*Content for Day 40*
+What I did:
 
 ## Day 41:
-
-*Content for Day 41*
+What I did:
 
 ## Day 42:
-
-*Content for Day 42*
+What I did:
 
 ## Day 43:
-
-*Content for Day 43*
+What I did:
 
 ## Day 44:
-
-*Content for Day 44*
+What I did:
 
 ## Day 45:
-
-*Content for Day 45*
+What I did:
 
 ## Day 46:
-
-*Content for Day 46*
+What I did:
 
 ## Day 47:
-
-*Content for Day 47*
+What I did:
 
 ## Day 48:
-
-*Content for Day 48*
+What I did:
 
 ## Day 49:
-
-*Content for Day 49*
+What I did:
 
 ## Day 50:
-
-*Content for Day 50*
+What I did:
 
 ## Day 51:
-
-*Content for Day 51*
+What I did:
 
 ## Day 52:
-
-*Content for Day 52*
+What I did:
 
 ## Day 53:
-
-*Content for Day 53*
+What I did:
 
 ## Day 54:
-
-*Content for Day 54*
+What I did:
 
 ## Day 55:
-
-*Content for Day 55*
+What I did:
 
 ## Day 56:
-
-*Content for Day 56*
+What I did:
 
 ## Day 57:
-
-*Content for Day 57*
+What I did:
 
 ## Day 58:
-
-*Content for Day 58*
+What I did:
 
 ## Day 59:
-
-*Content for Day 59*
+What I did:
 
 ## Day 60:
-
-*Content for Day 60*
+What I did:
 
 ## Day 61:
-
-*Content for Day 61*
+What I did:
 
 ## Day 62:
-
-*Content for Day 62*
+What I did:
 
 ## Day 63:
-
-*Content for Day 63*
+What I did:
 
 ## Day 64:
-
-*Content for Day 64*
+What I did:
 
 ## Day 65:
-
-*Content for Day 65*
+What I did:
 
 ## Day 66:
-
-*Content for Day 66*
+What I did:
 
 ## Day 67:
-
-*Content for Day 67*
+What I did:
 
 ## Day 68:
-
-*Content for Day 68*
+What I did:
