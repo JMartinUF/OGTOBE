@@ -24,8 +24,8 @@ What I did:
 - Created a Nhost Project that processes the database:
   https://app.nhost.io/orgs/riotfqaddspjmuogrshl/projects/ttkyyarywykcfihkntdm/database/browser/default
 - Starting the Process of holding data for the RSVP and maybe going to talk about the Registry later today.
-- Got the RSVP table build so that I can register a user and have them add a email and guest. This command removes the data and starts the IDs back to one.:
-  TRUNCATE TABLE rsvp RESTART IDENTITY; (run this in the sql editor on nhost)
+- Got the RSVP table built so that I can register a user and have them add a email and guest. This command removes the data and starts the IDs back to one.:
+  'TRUNCATE TABLE rsvp RESTART IDENTITY;' (run this in the sql editor on nhost)
 
 ## Day 3:
 
