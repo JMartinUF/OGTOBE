@@ -1,3 +1,5 @@
+// File Locaiton: src/app/photos/page.jsx
+
 import React from "react";
 import Header from "../../components/header/header";
 import Navbar from "../../components/navbar/navbar";

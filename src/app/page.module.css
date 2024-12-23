@@ -1,14 +1,94 @@
+/* File Location: src/app/page/page.module.css */
+
 .container {
   display: grid;
-  grid-template-rows: auto 1fr auto; /* Header, main content, footer */
+  grid-template-rows: auto auto 1fr auto; /* Header, Navbar, main content, footer */
   min-height: 100vh;
-  gap: 20px;
+  gap: 10px; /* Reduced gap for better spacing */
   background-color: var(--white);
 }
 
 .main {
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  align-items: center; /* Center content horizontally */
+  justify-content: flex-start; /* Align content closer to the top */
+  gap: 24px;
   padding: 20px;
+  text-align: center; /* Align text in the center */
+  margin-top: 20px;
+}
+
+.heading {
+  font-size: 2.5em;
+  color: var(--blue);
+  font-family: "Georgia", serif;
+  margin-bottom: 10px;
+}
+
+.text {
+  font-size: 1.2em;
+  color: var(--gray);
+  line-height: 1.6;
+  font-family: "Arial", sans-serif;
+}
+
+.rsvpButton {
+  padding: 12px 24px;
+  font-size: 1.1em;
+  color: var(--white);
+  background-color: var(--green);
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.rsvpButton:hover {
+  background-color: var(--dark-green); /* Darker shade of green for hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  /* Adjust Main Section for Tablets and Phones */
+  .main {
+    padding: 10px;
+    margin-top: 10px;
+    gap: 16px;
+  }
+
+  .heading {
+    font-size: 2em; /* Reduce heading size */
+  }
+
+  .text {
+    font-size: 1em; /* Reduce paragraph size */
+  }
+
+  .rsvpButton {
+    padding: 10px 20px;
+    font-size: 1em; /* Adjust button size */
+  }
+}
+
+@media (max-width: 480px) {
+  /* Further Adjustments for Small Phones */
+  .main {
+    padding: 8px;
+    gap: 12px;
+  }
+
+  .heading {
+    font-size: 1.8em; /* Smaller heading size */
+  }
+
+  .text {
+    font-size: 0.9em; /* Adjust paragraph font size */
+  }
+
+  .rsvpButton {
+    padding: 8px 16px;
+    font-size: 0.9em; /* Make button more compact */
+  }
 }
