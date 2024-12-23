@@ -1,0 +1,33 @@
+.register {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background-color: var(--white);
+    padding: 20px;
+    border: 2px solid var(--green);
+    border-radius: 10px;
+  }
+  
+  .label {
+    color: var(--green);
+  }
+  
+  .input {
+    border: 1px solid var(--pink);
+    padding: 5px;
+    border-radius: 5px;
+  }
+  
+  .button {
+    background-color: var(--green);
+    color: var(--white);
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .button:hover {
+    background-color: var(--pink);
+    color: var(--green);
+  }
+  

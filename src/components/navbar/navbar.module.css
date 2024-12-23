@@ -1,0 +1,29 @@
+.navbar {
+    background-color: var(--green);
+    padding: 10px 20px;
+    text-align: center;
+  }
+  
+  .navList {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .navItem {
+    font-size: 1.2em;
+  }
+  
+  .navItem a {
+    color: var(--white);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  
+  .navItem a:hover {
+    color: var(--pink); /* 10% Pink for hover effect */
+  }
+  

@@ -1,0 +1,27 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Full height to position footer at the bottom */
+    background-color: var(--white); /* 60% White */
+  }
+  
+  .main {
+    flex: 1; /* Allows main content to expand while footer stays at the bottom */
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .heading {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: var(--green); /* 30% Green */
+    font-family: "Georgia", serif; /* Elegant font for headings */
+  }
+  
+  .text {
+    font-size: 1.2em;
+    line-height: 1.6;
+    color: var(--pink); /* 10% Pink for accents */
+    font-family: "Arial", sans-serif;
+  }
+  

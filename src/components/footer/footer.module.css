@@ -1,0 +1,21 @@
+.footer {
+    text-align: center;
+    background-color: var(--white); /* 60% White */
+    color: var(--green); /* 30% Green */
+    padding: 20px;
+    border-top: 2px solid var(--green);
+  }
+  
+  .footer p {
+    margin: 5px 0;
+    font-size: 1.2em;
+  }
+  
+  .divider {
+    border: none;
+    height: 1px;
+    background-color: var(--pink); /* 10% Pink for the divider */
+    margin: 10px auto;
+    width: 50%;
+  }
+  

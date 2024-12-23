@@ -1,0 +1,14 @@
+.container {
+  display: grid;
+  grid-template-rows: auto 1fr auto; /* Header, main content, footer */
+  min-height: 100vh;
+  gap: 20px;
+  background-color: var(--white);
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding: 20px;
+}
