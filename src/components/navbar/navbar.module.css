@@ -1,29 +1,89 @@
+/* File Location: src/components/navbar/navbar.module.css */
+
 .navbar {
-    background-color: var(--green);
-    padding: 10px 20px;
-    text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 20px;
+  position: relative;
+  z-index: 1000;
+}
+
+/* Adjust Navbar for Mobile View */
+@media (max-width: 768px) {
+  .navbar {
+    justify-content: flex-start;
+    position: relative;
   }
-  
-  .navList {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
+}
+
+/* Full Navbar List for Desktop View */
+.navListDesktop {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  list-style: none;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Hidden by Default in Mobile View */
+.navListClosed {
+  display: none;
+}
+
+/* Visible Dropdown Menu in Mobile View */
+.navListOpen {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 50px;
+  left: 0;
+  width: 100%;
+  background-color: black;
+  padding: 20px;
+  list-style: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin: 0;
+}
+
+/* Navbar Items */
+.navItem {
+  font-size: 1rem;
+  text-align: center;
+  padding: 10px 0;
+  color: white;
+  border-bottom: 1px solid #444;
+}
+
+.navItem:last-child {
+  border-bottom: none;
+}
+
+/* Menu Button for Mobile */
+.menuButton {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding-top: 10px;
+}
+
+.menuButton img {
+  width: 24px;
+  height: 24px;
+}
+
+/* Display Menu Button in Mobile View */
+@media (max-width: 768px) {
+  .menuButton {
+    display: block;
+    position: absolute;
+    left: 10px;
   }
-  
-  .navItem {
-    font-size: 1.2em;
+
+  .navListDesktop {
+    display: none;
   }
-  
-  .navItem a {
-    color: var(--white);
-    text-decoration: none;
-    transition: color 0.2s;
-  }
-  
-  .navItem a:hover {
-    color: var(--pink); /* 10% Pink for hover effect */
-  }
-  
+}
