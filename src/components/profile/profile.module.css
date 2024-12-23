@@ -1,0 +1,15 @@
+.profile {
+    background-color: var(--white);
+    border: 2px solid var(--green);
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  .profileTitle {
+    color: var(--green);
+  }
+  
+  .profileText {
+    color: var(--pink);
+  }
+  

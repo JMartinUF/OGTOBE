@@ -1,0 +1,28 @@
+.header {
+    background-color: #01796f; /* Pine Green */
+    color: var(--white);
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  .headerLink {
+    text-decoration: none;
+    color: inherit; /* Inherit text color */
+    display: block;
+  }
+  
+  .headerLink:hover {
+    color: var(--pink); /* Change color on hover */
+  }
+  
+  .header h1 {
+    font-size: 2em;
+    margin: 0;
+  }
+  
+  .header p {
+    font-size: 1.2em;
+    margin: 5px 0;
+  }
+  
