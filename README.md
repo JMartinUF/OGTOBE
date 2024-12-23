@@ -5,8 +5,7 @@ This app is a prototype of a wedding website I'm building for my fiancée. The p
 ## How to Run the App
 To start the development server, use the following command:
 
-```bash
-npm run dev
+'npm run dev'
 
 ## Day 1:
 What I did:
