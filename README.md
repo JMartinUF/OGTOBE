@@ -25,6 +25,9 @@ What I did:
   https://app.nhost.io/orgs/riotfqaddspjmuogrshl/projects/ttkyyarywykcfihkntdm/database/browser/default
 - Starting the Process of holding data for the RSVP and maybe going to talk about the Registry later today.
 - Got the RSVP table built so that I can register a user and have them add a email and guest. This command removes the data and starts the IDs back to one.:
+- Adding the Pie chart and changed some of the styling for the RSVP page. 
+
+- I need to add the function where as soon as you rsvp for the wedding that it does a confirmation. Without it, it makes the user think that they didn't register to the event and will confuse the user into submitting their info twice and causing an error. 
 
 ### TRUNCATE TABLE rsvp RESTART IDENTITY; -- (run this in the sql editor on nhost)
 
