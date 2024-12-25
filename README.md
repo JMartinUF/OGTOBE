@@ -11,7 +11,6 @@ To start the development server, use the following command:
 ## Day 1:
 
 What I did:
-
 - Created a header that has a dynamic countdown for how many days until our wedding day.
 - Created the nav bar with links to various pages.
 - Created the main page.jsx that renders everything.
@@ -20,7 +19,6 @@ What I did:
 ## Day 2:
 
 What I did:
-
 - Created a Nhost Project that processes the database:
   https://app.nhost.io/orgs/riotfqaddspjmuogrshl/projects/ttkyyarywykcfihkntdm/database/browser/default
 - Starting the Process of holding data for the RSVP and maybe going to talk about the Registry later today.
@@ -29,11 +27,18 @@ What I did:
 
 - I need to add the function where as soon as you rsvp for the wedding that it does a confirmation. Without it, it makes the user think that they didn't register to the event and will confuse the user into submitting their info twice and causing an error. 
 
-### TRUNCATE TABLE rsvp RESTART IDENTITY; -- (run this in the sql editor on nhost)
+Run this command in nhost.ios SQL Editor
+#### TRUNCATE TABLE plus_ones RESTART IDENTITY CASCADE;
+#### TRUNCATE TABLE rsvp RESTART IDENTITY CASCADE;
 
 ## Day 3:
 
 What I did:
+- Updated the RSVP page so that if you add a plus one it updates the Status Chart so it displays the proper amount of Attending. (only works with one plus one... need to fix it if adding more than one person.)
+- Added some usefull U.I to the status chart so that it shows the amount of people per column. 
+- Added a guest and admin view for the RSVP page with validation.
+- Here is an sql insert statement for the RSVP table and the PLUS_ONES table:
+- Admin RSVP page 60% done? need to fix some of the little bugs and finalize the invite list so I can hard code data and add validation.
 
 ## Day 4:
 
