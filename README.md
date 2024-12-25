@@ -28,14 +28,17 @@ What I did:
 - I need to add the function where as soon as you rsvp for the wedding that it does a confirmation. Without it, it makes the user think that they didn't register to the event and will confuse the user into submitting their info twice and causing an error. 
 
 Run this command in nhost.ios SQL Editor
-### TRUNCATE TABLE plus_ones RESTART IDENTITY CASCADE;
-### TRUNCATE TABLE rsvp RESTART IDENTITY CASCADE;
+#### TRUNCATE TABLE plus_ones RESTART IDENTITY CASCADE;
+#### TRUNCATE TABLE rsvp RESTART IDENTITY CASCADE;
 
 ## Day 3:
 
 What I did:
-- Updated the RSVP page so that if you add a plus one it updates the Status Chart so it displays the proper amount of Attending.
+- Updated the RSVP page so that if you add a plus one it updates the Status Chart so it displays the proper amount of Attending. (only works with one plus one... need to fix it if adding more than one person.)
 - Added some usefull U.I to the status chart so that it shows the amount of people per column. 
+- Added a guest and admin view for the RSVP page with validation.
+- Here is an sql insert statement for the RSVP table and the PLUS_ONES table:
+- Admin RSVP page 60% done? need to fix some of the little bugs and finalize the invite list so I can hard code data and add validation.
 
 ## Day 4:
 

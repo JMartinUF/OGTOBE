@@ -1,0 +1,63 @@
+/* File Location: src/app/rsvp/adminView.module.css */
+
+.container {
+    padding: 20px;
+    background-color: var(--white);
+    border-radius: 10px;
+  }
+  
+  .heading {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: var(--black);
+    text-align: center;
+  }
+  
+  .flexContainer {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+  }
+  
+  .chartSection {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--light-gray);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .legend {
+    margin-top: 20px;
+    text-align: left;
+  }
+  
+  .legendItem {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .legendColor {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    border-radius: 50%;
+  }
+  
+  .totalInvited {
+    font-weight: bold;
+    color: #A9A9A9; /* Grey for Total Invited */
+  }
+  
+  .tableSection {
+    flex: 2;
+    background-color: var(--light-gray);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  

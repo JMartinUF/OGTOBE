@@ -1,0 +1,38 @@
+/* File Location: src/components/table/table.module.css */
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 1em;
+    text-align: left;
+  }
+  
+  .table th {
+    padding: 12px 15px;
+    background-color: #01796F; /* Same green as header and footer */
+    color: white;
+    text-transform: uppercase;
+    font-size: 1.1em;
+    font-weight: bold;
+    border: 1px solid #ddd;
+  }
+  
+  .table td {
+    padding: 12px 15px;
+    color: #333;
+    border: 1px solid #ddd;
+  }
+  
+  .table tr:nth-child(even) {
+    background-color: #f9f9f9; /* Light grey for alternating rows */
+  }
+  
+  .table tr:nth-child(odd) {
+    background-color: #ffffff; /* White for odd rows */
+  }
+  
+  .table tr:hover {
+    background-color: #f1f1f1; /* Highlight row on hover */
+  }
+  
