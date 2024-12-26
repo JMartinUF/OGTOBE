@@ -50,3 +50,4 @@ What I did:
 
 - Updated the rsvp page so that if someone has a guest (tested 10 other names as other attendees on one guest) it adds those other attendees as acounted for the remaining and the attending count.
 - For Demo Reasons, added a switch to guest view and a logout button for easy back and forth double checking. (will remove once pushed to live.)
+- Added a remove/delete function to the database so that in the adminView.jsx I can remove guest if need be.
