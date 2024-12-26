@@ -12,6 +12,7 @@
     "@nhost/nhost-js": "^3.2.1",
     "next": "15.1.2",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "recharts": "^2.15.0"
   }
 }
