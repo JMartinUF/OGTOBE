@@ -48,7 +48,9 @@ export default function GuestView() {
 
       if (rsvpResponse.error) {
         console.error("Error adding RSVP:", rsvpResponse.error);
-        setErrorMessage("There was an error submitting your RSVP. Please try again.");
+        setErrorMessage(
+          "There was an error submitting your RSVP. Please try again."
+        );
         return;
       }
 
@@ -71,11 +73,16 @@ export default function GuestView() {
           })),
         };
 
-        const plusOnesResponse = await nhost.graphql.request(plusOnesMutation, plusOnesVariables);
+        const plusOnesResponse = await nhost.graphql.request(
+          plusOnesMutation,
+          plusOnesVariables
+        );
 
         if (plusOnesResponse.error) {
           console.error("Error adding Plus Ones:", plusOnesResponse.error);
-          setErrorMessage("There was an error adding additional names. Please try again.");
+          setErrorMessage(
+            "There was an error adding additional names. Please try again."
+          );
           return;
         }
       }
@@ -86,7 +93,6 @@ export default function GuestView() {
       setAttending("");
       setAdditionalNames([]);
       setErrorMessage("");
-
     } catch (err) {
       console.error("Unexpected error:", err);
       setErrorMessage("An unexpected error occurred. Please try again.");
@@ -126,7 +132,7 @@ export default function GuestView() {
             onChange={(e) => setAttending(e.target.value)}
             required
           >
-            <option value="">-- Select --</option>
+            <option value="">Select</option>
             <option value="yes">Yes</option>
             <option value="no">No</option>
           </select>
