@@ -20,6 +20,12 @@ export default function PasswordModal({ isOpen, onVerify }) {
     }
   };
 
+  const handleKeyPress = (event) => {
+    if (event.key === "Enter") {
+      handleVerify();
+    }
+  };
+
   if (!isOpen) return null;
 
   return (
@@ -32,6 +38,7 @@ export default function PasswordModal({ isOpen, onVerify }) {
           placeholder="Enter password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
+          onKeyPress={handleKeyPress} // Add the event handler here
         />
         {error && <p className={styles.error}>{error}</p>}
         <button className={styles.button} onClick={handleVerify}>
