@@ -10,7 +10,7 @@ export default function AdminView() {
   const [rsvpData, setRsvpData] = useState([]);
   const [chartData, setChartData] = useState([]);
   const totalInvited = 150; // Replace this with your total invited count
-  const COLORS = ["#00C49F", "#FF69B4", "#D3D3D3"]; // Green, Pink, Light Grey
+  const COLORS = ["#50c878", "#FF69B4", "#D3D3D3"]; // Green, Pink, Light Grey
 
   useEffect(() => {
     const fetchData = async () => {

@@ -51,3 +51,49 @@ What I did:
 - Updated the rsvp page so that if someone has a guest (tested 10 other names as other attendees on one guest) it adds those other attendees as acounted for the remaining and the attending count.
 - For Demo Reasons, added a switch to guest view and a logout button for easy back and forth double checking. (will remove once pushed to live.)
 - Added a remove/delete function to the database so that in the adminView.jsx I can remove guest if need be.
+
+## Day 5:
+
+- I changed everything that isn't px to rem for futureproofing.
+- Tested out 150 fake Guests with various other attendees, here is the sql script:
+
+### DO $$
+
+DECLARE
+total_guests INT := 150;
+rsvp_count INT := 0;
+remaining_plus_ones INT;
+guest_id INT;
+BEGIN
+-- Loop to insert RSVPs
+WHILE rsvp_count < total_guests LOOP
+-- Calculate the remaining Plus Ones available for this guest
+remaining_plus_ones := LEAST(FLOOR(RANDOM() \* 5), total_guests - rsvp_count - 1);
+
+        -- Insert an RSVP with a random attending status (true or false)
+        INSERT INTO rsvp (guest_name, is_attending, created_at)
+        VALUES (
+            'Guest ' || (rsvp_count + 1),
+            CASE WHEN RANDOM() < 0.5 THEN TRUE ELSE FALSE END,
+            NOW()
+        )
+        RETURNING id INTO guest_id;
+
+        -- Increment RSVP count
+        rsvp_count := rsvp_count + 1;
+
+        -- Loop to insert Plus Ones for the current guest
+        FOR i IN 1..remaining_plus_ones LOOP
+            INSERT INTO plus_ones (rsvp_id, plus_one_name, created_at)
+            VALUES (
+                guest_id,
+                'Plus One ' || (rsvp_count + i),
+                NOW()
+            );
+        END LOOP;
+
+        -- Adjust RSVP count for plus ones added
+        rsvp_count := rsvp_count + remaining_plus_ones;
+    END LOOP;
+
+END $$;

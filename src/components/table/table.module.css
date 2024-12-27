@@ -1,38 +1,31 @@
 /* File Location: src/components/table/table.module.css */
 
 .table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 20px 0;
-    font-size: 1em;
-    text-align: left;
-  }
-  
-  .table th {
-    padding: 12px 15px;
-    background-color: #01796F; /* Same green as header and footer */
-    color: white;
-    text-transform: uppercase;
-    font-size: 1.1em;
-    font-weight: bold;
-    border: 1px solid #ddd;
-  }
-  
-  .table td {
-    padding: 12px 15px;
-    color: #333;
-    border: 1px solid #ddd;
-  }
-  
-  .table tr:nth-child(even) {
-    background-color: #f9f9f9; /* Light grey for alternating rows */
-  }
-  
-  .table tr:nth-child(odd) {
-    background-color: #ffffff; /* White for odd rows */
-  }
-  
-  .table tr:hover {
-    background-color: #f1f1f1; /* Highlight row on hover */
-  }
-  
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.25rem 0;
+  font-size: 1em;
+  text-align: left;
+  box-shadow: 0 0.3125rem 0.9375rem rgba(0, 0, 0, 0.3), 0 0 0.9375rem #50c878;
+}
+
+.table th {
+  padding: 0.75rem 0.9375rem;
+  background-color: #50c878;
+  color: white;
+  text-transform: uppercase;
+  font-size: 1.1em;
+  font-weight: bold;
+  border: 0.0625rem solid #ddd;
+}
+
+.table td {
+  padding: 0.75rem 0.9375rem;
+  color: #333;
+  border: 0.0625rem solid #ddd;
+  background-color: #f9f9f9;
+}
+
+.table tr:hover {
+  background-color: #f1f1f1;
+}
