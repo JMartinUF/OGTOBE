@@ -1,22 +1,22 @@
 /* File Location: src/components/footer/footer.module.css */
 
 .footer {
-  background-color: #01796f; /* Pine Green */
-  color: var(--white); /* White text */
+  background-color: #50c878;
+  color: var(--white);
   text-align: center;
-  padding: 20px;
-  border-radius: 10px; /* Same rounded corners as the header */
+  padding: 1.25rem;
+  box-shadow: 0 0.3125rem 0.9375rem rgba(0, 0, 0, 0.3), 0 0 0.9375rem #50c878;
 }
 
 .footer p {
-  margin: 5px 0;
-  font-size: 1.2em; /* Matches the header's paragraph font size */
+  margin: 0.3125rem 0;
+  font-size: 1.2rem;
 }
 
 .divider {
   border: none;
-  height: 1px;
-  background-color: var(--pink); /* Pink color for the divider */
-  margin: 10px auto;
+  height: 0.0625rem;
+  background-color: var(--pink);
+  margin: 0.625rem auto;
   width: 50%;
 }

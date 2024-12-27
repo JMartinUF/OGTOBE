@@ -2,93 +2,91 @@
 
 .container {
   display: grid;
-  grid-template-rows: auto auto 1fr auto; /* Header, Navbar, main content, footer */
+  grid-template-rows: auto auto 1fr auto;
   min-height: 100vh;
-  gap: 10px; /* Reduced gap for better spacing */
+  gap: 0.625rem;
   background-color: var(--white);
 }
 
 .main {
   display: flex;
   flex-direction: column;
-  align-items: center; /* Center content horizontally */
-  justify-content: flex-start; /* Align content closer to the top */
-  gap: 24px;
-  padding: 20px;
-  text-align: center; /* Align text in the center */
-  margin-top: 20px;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1.5rem;
+  padding: 1.25rem;
+  text-align: center;
+  margin-top: 1.25rem;
 }
 
 .heading {
-  font-size: 2.5em;
+  font-size: 2.5rem;
   color: var(--blue);
   font-family: "Georgia", serif;
-  margin-bottom: 10px;
+  margin-bottom: 0.625rem;
 }
 
 .text {
-  font-size: 1.2em;
+  font-size: 1.2rem;
   color: var(--gray);
   line-height: 1.6;
   font-family: "Arial", sans-serif;
 }
 
 .rsvpButton {
-  padding: 12px 24px;
-  font-size: 1.1em;
+  padding: 0.75rem 1.5rem;
+  font-size: 1.1rem;
   color: var(--white);
   background-color: var(--green);
   border: none;
-  border-radius: 5px;
+  border-radius: 0.3125rem;
   text-decoration: none;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
 .rsvpButton:hover {
-  background-color: var(--dark-green); /* Darker shade of green for hover */
+  background-color: var(--dark-green);
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
-  /* Adjust Main Section for Tablets and Phones */
+@media (max-width: 48rem) {
   .main {
-    padding: 10px;
-    margin-top: 10px;
-    gap: 16px;
+    padding: 0.625rem;
+    margin-top: 0.625rem;
+    gap: 1rem;
   }
 
   .heading {
-    font-size: 2em; /* Reduce heading size */
+    font-size: 2rem;
   }
 
   .text {
-    font-size: 1em; /* Reduce paragraph size */
+    font-size: 1rem;
   }
 
   .rsvpButton {
-    padding: 10px 20px;
-    font-size: 1em; /* Adjust button size */
+    padding: 0.625rem 1.25rem;
+    font-size: 1rem;
   }
 }
 
-@media (max-width: 480px) {
-  /* Further Adjustments for Small Phones */
+@media (max-width: 30rem) {
   .main {
-    padding: 8px;
-    gap: 12px;
+    padding: 0.5rem;
+    gap: 0.75rem;
   }
 
   .heading {
-    font-size: 1.8em; /* Smaller heading size */
+    font-size: 1.8rem;
   }
 
   .text {
-    font-size: 0.9em; /* Adjust paragraph font size */
+    font-size: 0.9rem;
   }
 
   .rsvpButton {
-    padding: 8px 16px;
-    font-size: 0.9em; /* Make button more compact */
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
   }
 }
