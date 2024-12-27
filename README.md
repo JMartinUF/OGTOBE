@@ -112,3 +112,5 @@ What I did:
 #### END LOOP;
 
 #### END $$;
+
+- need to get hex codes for colors and all nec document get a vibe (chill, elagant... photos)

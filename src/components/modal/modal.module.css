@@ -11,7 +11,7 @@
   justify-content: center;
   align-items: center;
   z-index: 1000;
-  box-shadow: 0 0.3125rem 0.9375rem rgba(0, 0, 0, 0.3), 0 0 0.9375rem #50c878;
+  box-shadow: 0 0.3125rem 0.9375rem rgba(0, 0, 0, 0.3), 0 0 0.9375rem #1e783c;
 }
 
 .modal {
