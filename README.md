@@ -57,43 +57,58 @@ What I did:
 - I changed everything that isn't px to rem for futureproofing.
 - Tested out 150 fake Guests with various other attendees, here is the sql script:
 
-### DO $$
+#### DO $$
 
-DECLARE
-total_guests INT := 150;
-rsvp_count INT := 0;
-remaining_plus_ones INT;
-guest_id INT;
-BEGIN
--- Loop to insert RSVPs
-WHILE rsvp_count < total_guests LOOP
--- Calculate the remaining Plus Ones available for this guest
-remaining_plus_ones := LEAST(FLOOR(RANDOM() \* 5), total_guests - rsvp_count - 1);
+#### DECLARE
 
-        -- Insert an RSVP with a random attending status (true or false)
-        INSERT INTO rsvp (guest_name, is_attending, created_at)
-        VALUES (
-            'Guest ' || (rsvp_count + 1),
-            CASE WHEN RANDOM() < 0.5 THEN TRUE ELSE FALSE END,
-            NOW()
-        )
-        RETURNING id INTO guest_id;
+#### total_guests INT := 150;
 
-        -- Increment RSVP count
-        rsvp_count := rsvp_count + 1;
+#### rsvp_count INT := 0;
 
-        -- Loop to insert Plus Ones for the current guest
-        FOR i IN 1..remaining_plus_ones LOOP
-            INSERT INTO plus_ones (rsvp_id, plus_one_name, created_at)
-            VALUES (
-                guest_id,
-                'Plus One ' || (rsvp_count + i),
-                NOW()
-            );
-        END LOOP;
+#### remaining_plus_ones INT;
 
-        -- Adjust RSVP count for plus ones added
-        rsvp_count := rsvp_count + remaining_plus_ones;
-    END LOOP;
+#### guest_id INT;
 
-END $$;
+#### BEGIN
+
+#### WHILE rsvp_count < total_guests LOOP
+
+#### remaining_plus_ones := LEAST(FLOOR(RANDOM() \* 5), total_guests - rsvp_count - 1);
+
+#### INSERT INTO rsvp (guest_name, is_attending, created_at)
+
+#### VALUES (
+
+#### 'Guest ' || (rsvp_count + 1),
+
+#### CASE WHEN RANDOM() < 0.5 THEN TRUE ELSE FALSE END,
+
+#### NOW()
+
+#### )
+
+#### RETURNING id INTO guest_id;
+
+#### rsvp_count := rsvp_count + 1;
+
+#### FOR i IN 1..remaining_plus_ones LOOP
+
+#### INSERT INTO plus_ones (rsvp_id, plus_one_name, created_at)
+
+#### VALUES (
+
+#### guest_id,
+
+#### 'Plus One ' || (rsvp_count + i),
+
+#### NOW()
+
+#### );
+
+#### END LOOP;
+
+#### rsvp_count := rsvp_count + remaining_plus_ones;
+
+#### END LOOP;
+
+#### END $$;
