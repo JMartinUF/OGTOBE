@@ -61,52 +61,81 @@ What I did:
 - I changed everything that isn't px to rem for futureproofing.
 - Tested out 150 fake Guests with various other attendees, here is the sql script:
 
-DO $$
+#### DO $$
 
-DECLARE
-total_guests INT := 150;
-rsvp_count INT := 0;
-remaining_plus_ones INT;
-guest_id INT;
+#### DECLARE
 
-BEGIN
-WHILE rsvp_count < total_guests LOOP
-remaining_plus_ones := LEAST(FLOOR(RANDOM() \* 5), total_guests - rsvp_count - 1);
+#### total_guests INT := 150;
 
-    INSERT INTO rsvp (guest_name, is_attending, phone_number, allergies, comments, created_at)
-    VALUES (
-      'Guest ' || (rsvp_count + 1),
-      CASE WHEN RANDOM() < 0.5 THEN TRUE ELSE FALSE END,
-      '405-' || LPAD(FLOOR(RANDOM() * 9000000)::TEXT, 7, '0'), -- Random phone number
-      CASE
-        WHEN RANDOM() < 0.3 THEN 'Allergy to peanuts'
-        WHEN RANDOM() < 0.6 THEN 'Lactose intolerant'
-        ELSE NULL
-      END, -- Random allergies or NULL
-      CASE
-        WHEN RANDOM() < 0.5 THEN 'Excited for the event!'
-        ELSE NULL
-      END, -- Random comments or NULL
-      NOW()
-    )
-    RETURNING id INTO guest_id;
+#### rsvp_count INT := 0;
 
-    rsvp_count := rsvp_count + 1;
+#### remaining_plus_ones INT;
 
-    FOR i IN 1..remaining_plus_ones LOOP
-      INSERT INTO plus_ones (rsvp_id, plus_one_name, created_at)
-      VALUES (
-        guest_id,
-        'Plus One ' || (rsvp_count + i),
-        NOW()
-      );
-    END LOOP;
+#### guest_id INT;
 
-    rsvp_count := rsvp_count + remaining_plus_ones;
+#### BEGIN
 
-END LOOP;
+#### WHILE rsvp_count < total_guests LOOP
 
-END $$;
+#### remaining_plus_ones := LEAST(FLOOR(RANDOM() \* 5), total_guests - rsvp_count - 1);
+
+#### INSERT INTO rsvp (guest_name, is_attending, phone_number, allergies, comments, created_at)
+
+#### VALUES (
+
+#### 'Guest ' || (rsvp_count + 1),
+
+#### CASE WHEN RANDOM() < 0.5 THEN TRUE ELSE FALSE END,
+
+#### '405-' || LPAD(FLOOR(RANDOM() \* 9000000)::TEXT, 7, '0'), -- Random phone number
+
+#### CASE
+
+#### WHEN RANDOM() < 0.3 THEN 'Allergy to peanuts'
+
+#### WHEN RANDOM() < 0.6 THEN 'Lactose intolerant'
+
+#### ELSE NULL
+
+#### END, -- Random allergies or NULL
+
+#### CASE
+
+#### WHEN RANDOM() < 0.5 THEN 'Excited for the event!'
+
+#### ELSE NULL
+
+#### END, -- Random comments or NULL
+
+#### NOW()
+
+#### )
+
+#### RETURNING id INTO guest_id;
+
+#### rsvp_count := rsvp_count + 1;
+
+#### FOR i IN 1..remaining_plus_ones LOOP
+
+#### INSERT INTO plus_ones (rsvp_id, plus_one_name, created_at)
+
+#### VALUES (
+
+#### guest_id,
+
+#### 'Plus One ' || (rsvp_count + i),
+
+#### NOW()
+
+#### );
+
+#### END LOOP;
+
+#### rsvp_count := rsvp_count + remaining_plus_ones;
+
+#### END LOOP;
+
+#### END $$;
 
 - need to get hex codes for colors and all nec document get a vibe (chill, elagant... photos)!
 
