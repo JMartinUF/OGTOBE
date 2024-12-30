@@ -3,13 +3,19 @@
 import React, { useState } from "react";
 import styles from "./guestView.module.css";
 import nhost from "../../lib/nhost"; // Ensure Nhost client is correctly imported
+import Modal from "../../components/modal/modal"; // Import the Modal component
 
 export default function GuestView() {
   const [guestName, setGuestName] = useState("");
   const [attending, setAttending] = useState("");
   const [additionalNames, setAdditionalNames] = useState([]);
   const [newName, setNewName] = useState("");
+  const [allergies, setAllergies] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
+  const [comments, setComments] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
+  const [isModalOpen, setIsModalOpen] = useState(false); // State to control the modal
+  const [modalMessage, setModalMessage] = useState(""); // State to control the modal message
 
   const handleAddName = () => {
     if (newName.trim()) {
@@ -21,7 +27,7 @@ export default function GuestView() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!guestName || !attending) {
+    if (!guestName || !attending || !phoneNumber) {
       setErrorMessage("Please fill out all required fields.");
       return;
     }
@@ -29,19 +35,25 @@ export default function GuestView() {
     try {
       // Add main RSVP entry
       const rsvpMutation = `
-        mutation AddRSVP($guest_name: String!, $is_attending: Boolean!) {
-          insert_rsvp_one(object: {
-            guest_name: $guest_name,
-            is_attending: $is_attending
-          }) {
-            id
-          }
+      mutation AddRSVP($guest_name: String!, $is_attending: Boolean!, $allergies: String, $phone_number: String!, $comments: String) {
+        insert_rsvp_one(object: {
+          guest_name: $guest_name,
+          is_attending: $is_attending,
+          allergies: $allergies,
+          phone_number: $phone_number,
+          comments: $comments
+        }) {
+          id
         }
-      `;
+      }
+    `;
 
       const variables = {
         guest_name: guestName,
         is_attending: attending === "yes",
+        allergies,
+        phone_number: phoneNumber,
+        comments,
       };
 
       const rsvpResponse = await nhost.graphql.request(rsvpMutation, variables);
@@ -87,11 +99,26 @@ export default function GuestView() {
         }
       }
 
-      // Reset form and show success message
-      alert("RSVP submitted successfully!");
+      // Set the modal message based on the RSVP response
+      if (attending === "yes") {
+        setModalMessage(
+          "RSVP Submitted!\nThank you for your response. We look forward to seeing you!"
+        );
+      } else {
+        setModalMessage(
+          "RSVP Submitted!\nThank you for letting us know. We’re sorry you can’t make it, but we’ll miss you!"
+        );
+      }
+
+      // Reset form and show success modal
+      setIsModalOpen(true); // Open the modal
       setGuestName("");
       setAttending("");
       setAdditionalNames([]);
+      setNewName("");
+      setAllergies("");
+      setPhoneNumber("");
+      setComments("");
       setErrorMessage("");
     } catch (err) {
       console.error("Unexpected error:", err);
@@ -137,7 +164,25 @@ export default function GuestView() {
             <option value="no">No</option>
           </select>
         </label>
-
+        <label className={styles.label}>
+          Best Phone Number to Reach You At:
+          <input
+            type="tel"
+            className={styles.input}
+            value={phoneNumber}
+            onChange={(e) => setPhoneNumber(e.target.value)}
+            required
+          />
+        </label>
+        <label className={styles.label}>
+          Any Food Allergies or Dietary Restrictions?
+          <textarea
+            className={styles.textarea}
+            value={allergies}
+            onChange={(e) => setAllergies(e.target.value)}
+            placeholder="Please list any food allergies or restrictions."
+          />
+        </label>
         <label className={styles.label}>
           Add an Additional Name:
           <input
@@ -155,7 +200,6 @@ export default function GuestView() {
             Add Name
           </button>
         </label>
-
         {additionalNames.length > 0 && (
           <div className={styles.additionalNames}>
             <h3>Additional Names:</h3>
@@ -166,15 +210,31 @@ export default function GuestView() {
             </ul>
           </div>
         )}
-
+        <label className={styles.label}>
+          Any Comments or Questions for Us?
+          <textarea
+            className={styles.textarea}
+            value={comments}
+            onChange={(e) => setComments(e.target.value)}
+            placeholder="Enter any additional comments or questions."
+          />
+        </label>
         <button type="submit" className={styles.button}>
           Submit
         </button>
       </form>
-
       <button className={styles.button} onClick={handleViewLocation}>
         View Rustic Rose Location
       </button>
+
+      {/* Modal for success message */}
+      <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
+        <h2>{modalMessage.split("\n")[0]}</h2>
+        <p>{modalMessage.split("\n")[1]}</p>
+        <button className={styles.button} onClick={() => setIsModalOpen(false)}>
+          Close
+        </button>
+      </Modal>
     </div>
   );
 }

@@ -1,11 +1,11 @@
 /* File Location: src/components/footer/footer.module.css */
 
 .footer {
-  background-color: #50c878;
+  background-color: #1e783c;
   color: var(--white);
   text-align: center;
   padding: 1.25rem;
-  box-shadow: 0 0.3125rem 0.9375rem rgba(0, 0, 0, 0.3), 0 0 0.9375rem #50c878;
+  box-shadow: 0 0.3125rem 0.9375rem rgba(0, 0, 0, 0.3), 0 0 0.9375rem #1e783c;
 }
 
 .footer p {
