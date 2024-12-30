@@ -147,3 +147,5 @@ What I did:
 
 - Added a phone number, allergies, and a comments input to the rsvp guest page.
 - In the Admin page I added that data to the table.
+- I want to now add pagination.
+- Cool thing to add would be text notifications sent to the users phone whenever they RSVP.

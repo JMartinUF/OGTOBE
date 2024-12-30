@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import styles from "./guestView.module.css";
 import nhost from "../../lib/nhost"; // Ensure Nhost client is correctly imported
+import Modal from "../../components/modal/modal"; // Import the Modal component
 
 export default function GuestView() {
   const [guestName, setGuestName] = useState("");
@@ -13,6 +14,8 @@ export default function GuestView() {
   const [phoneNumber, setPhoneNumber] = useState("");
   const [comments, setComments] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
+  const [isModalOpen, setIsModalOpen] = useState(false); // State to control the modal
+  const [modalMessage, setModalMessage] = useState(""); // State to control the modal message
 
   const handleAddName = () => {
     if (newName.trim()) {
@@ -96,8 +99,19 @@ export default function GuestView() {
         }
       }
 
-      // Reset form and show success message
-      alert("RSVP submitted successfully!");
+      // Set the modal message based on the RSVP response
+      if (attending === "yes") {
+        setModalMessage(
+          "RSVP Submitted!\nThank you for your response. We look forward to seeing you!"
+        );
+      } else {
+        setModalMessage(
+          "RSVP Submitted!\nThank you for letting us know. We’re sorry you can’t make it, but we’ll miss you!"
+        );
+      }
+
+      // Reset form and show success modal
+      setIsModalOpen(true); // Open the modal
       setGuestName("");
       setAttending("");
       setAdditionalNames([]);
@@ -212,6 +226,15 @@ export default function GuestView() {
       <button className={styles.button} onClick={handleViewLocation}>
         View Rustic Rose Location
       </button>
+
+      {/* Modal for success message */}
+      <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
+        <h2>{modalMessage.split("\n")[0]}</h2>
+        <p>{modalMessage.split("\n")[1]}</p>
+        <button className={styles.button} onClick={() => setIsModalOpen(false)}>
+          Close
+        </button>
+      </Modal>
     </div>
   );
 }
