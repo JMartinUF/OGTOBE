@@ -61,6 +61,8 @@ What I did:
 - I changed everything that isn't px to rem for futureproofing.
 - Tested out 150 fake Guests with various other attendees, here is the sql script:
 
+Run this command in nhost.ios SQL Editor
+
 #### DO $$
 
 #### DECLARE
