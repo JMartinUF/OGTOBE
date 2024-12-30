@@ -8,6 +8,8 @@ To start the development server, use the following command:
 
 'npm run dev'
 
+- need to get hex codes for colors and all nec document get a vibe (chill, elagant... photos)!
+
 ## Day 1:
 
 What I did:
@@ -54,63 +56,63 @@ What I did:
 
 ## Day 5:
 
+What I did:
+
 - I changed everything that isn't px to rem for futureproofing.
 - Tested out 150 fake Guests with various other attendees, here is the sql script:
 
-#### DO $$
+DO $$
 
-#### DECLARE
+DECLARE
+total_guests INT := 150;
+rsvp_count INT := 0;
+remaining_plus_ones INT;
+guest_id INT;
 
-#### total_guests INT := 150;
+BEGIN
+WHILE rsvp_count < total_guests LOOP
+remaining_plus_ones := LEAST(FLOOR(RANDOM() \* 5), total_guests - rsvp_count - 1);
 
-#### rsvp_count INT := 0;
+    INSERT INTO rsvp (guest_name, is_attending, phone_number, allergies, comments, created_at)
+    VALUES (
+      'Guest ' || (rsvp_count + 1),
+      CASE WHEN RANDOM() < 0.5 THEN TRUE ELSE FALSE END,
+      '405-' || LPAD(FLOOR(RANDOM() * 9000000)::TEXT, 7, '0'), -- Random phone number
+      CASE
+        WHEN RANDOM() < 0.3 THEN 'Allergy to peanuts'
+        WHEN RANDOM() < 0.6 THEN 'Lactose intolerant'
+        ELSE NULL
+      END, -- Random allergies or NULL
+      CASE
+        WHEN RANDOM() < 0.5 THEN 'Excited for the event!'
+        ELSE NULL
+      END, -- Random comments or NULL
+      NOW()
+    )
+    RETURNING id INTO guest_id;
 
-#### remaining_plus_ones INT;
+    rsvp_count := rsvp_count + 1;
 
-#### guest_id INT;
+    FOR i IN 1..remaining_plus_ones LOOP
+      INSERT INTO plus_ones (rsvp_id, plus_one_name, created_at)
+      VALUES (
+        guest_id,
+        'Plus One ' || (rsvp_count + i),
+        NOW()
+      );
+    END LOOP;
 
-#### BEGIN
+    rsvp_count := rsvp_count + remaining_plus_ones;
 
-#### WHILE rsvp_count < total_guests LOOP
+END LOOP;
 
-#### remaining_plus_ones := LEAST(FLOOR(RANDOM() \* 5), total_guests - rsvp_count - 1);
+END $$;
 
-#### INSERT INTO rsvp (guest_name, is_attending, created_at)
+- need to get hex codes for colors and all nec document get a vibe (chill, elagant... photos)!
 
-#### VALUES (
+## Day 6:
 
-#### 'Guest ' || (rsvp_count + 1),
+What I did:
 
-#### CASE WHEN RANDOM() < 0.5 THEN TRUE ELSE FALSE END,
-
-#### NOW()
-
-#### )
-
-#### RETURNING id INTO guest_id;
-
-#### rsvp_count := rsvp_count + 1;
-
-#### FOR i IN 1..remaining_plus_ones LOOP
-
-#### INSERT INTO plus_ones (rsvp_id, plus_one_name, created_at)
-
-#### VALUES (
-
-#### guest_id,
-
-#### 'Plus One ' || (rsvp_count + i),
-
-#### NOW()
-
-#### );
-
-#### END LOOP;
-
-#### rsvp_count := rsvp_count + remaining_plus_ones;
-
-#### END LOOP;
-
-#### END $$;
-
-- need to get hex codes for colors and all nec document get a vibe (chill, elagant... photos)
+- Added a phone number, allergies, and a comments input to the rsvp guest page.
+- In the Admin page I added that data to the table.

@@ -32,18 +32,18 @@ export default function GuestView() {
     try {
       // Add main RSVP entry
       const rsvpMutation = `
-        mutation AddRSVP($guest_name: String!, $is_attending: Boolean!, $allergies: String, $phone_number: String!, $comments: String) {
-          insert_rsvp_one(object: {
-            guest_name: $guest_name,
-            is_attending: $is_attending,
-            allergies: $allergies,
-            phone_number: $phone_number,
-            comments: $comments
-          }) {
-            id
-          }
+      mutation AddRSVP($guest_name: String!, $is_attending: Boolean!, $allergies: String, $phone_number: String!, $comments: String) {
+        insert_rsvp_one(object: {
+          guest_name: $guest_name,
+          is_attending: $is_attending,
+          allergies: $allergies,
+          phone_number: $phone_number,
+          comments: $comments
+        }) {
+          id
         }
-      `;
+      }
+    `;
 
       const variables = {
         guest_name: guestName,

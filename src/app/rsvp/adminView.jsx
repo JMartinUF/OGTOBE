@@ -1,6 +1,6 @@
 // File Location: src/app/rsvp/adminView.jsx
 
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
 import { PieChart, Pie, Cell, ResponsiveContainer } from "recharts";
 import Table from "../../components/table/table";
 import nhost from "../../lib/nhost";
@@ -20,6 +20,9 @@ export default function AdminView() {
             id
             guest_name
             is_attending
+            phone_number
+            allergies
+            comments
             plus_ones {
               plus_one_name
             }
@@ -86,7 +89,16 @@ export default function AdminView() {
     }
   };
 
-  const columns = ["Actions", "Guest", "Attending", "Other Attendees"];
+  const columns = [
+    "Actions",
+    "Attending",
+    "Guest",
+    "Phone Number",
+    "Other Attendees",
+    "Allergies",
+    "Comments",
+  ];
+
   const rows = rsvpData.map((item) => [
     <img
       key={`delete-${item.id}`}
@@ -95,13 +107,16 @@ export default function AdminView() {
       className={styles.deleteButton}
       onClick={() => handleDelete(item.id)}
     />,
-    item.guest_name,
     item.is_attending ? "Yes" : "No",
+    item.guest_name,
+    item.phone_number || "N/A",
     item.plus_ones.length > 0
       ? `${item.plus_ones.length} (${item.plus_ones
           .map((p) => p.plus_one_name)
           .join(", ")})`
       : "None",
+    item.allergies || "None",
+    item.comments || "None",
   ]);
 
   return (
