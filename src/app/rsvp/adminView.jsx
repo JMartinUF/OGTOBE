@@ -1,16 +1,19 @@
 // File Location: src/app/rsvp/adminView.jsx
 
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
 import { PieChart, Pie, Cell, ResponsiveContainer } from "recharts";
 import Table from "../../components/table/table";
+import Pagination from "../../components/Pagination/Pagination";
 import nhost from "../../lib/nhost";
 import styles from "./adminView.module.css";
 
 export default function AdminView() {
   const [rsvpData, setRsvpData] = useState([]);
   const [chartData, setChartData] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [rowsPerPage] = useState(10);
   const totalInvited = 150; // Replace this with your total invited count
-  const COLORS = ["#50c878", "#FF69B4", "#D3D3D3"]; // Green, Pink, Light Grey
+  const COLORS = ["#1e783c", "#FF69B4", "#D3D3D3"]; // Green, Pink, Light Grey
 
   useEffect(() => {
     const fetchData = async () => {
@@ -20,6 +23,9 @@ export default function AdminView() {
             id
             guest_name
             is_attending
+            phone_number
+            allergies
+            comments
             plus_ones {
               plus_one_name
             }
@@ -86,8 +92,24 @@ export default function AdminView() {
     }
   };
 
-  const columns = ["Actions", "Guest", "Attending", "Other Attendess"];
-  const rows = rsvpData.map((item) => [
+  // Pagination logic
+  const indexOfLastRow = currentPage * rowsPerPage;
+  const indexOfFirstRow = indexOfLastRow - rowsPerPage;
+  const currentRows = rsvpData.slice(indexOfFirstRow, indexOfLastRow);
+
+  const handlePageChange = (pageNumber) => setCurrentPage(pageNumber);
+
+  const columns = [
+    "Actions",
+    "Attending",
+    "Guest",
+    "Phone Number",
+    "Other Attendees",
+    "Allergies",
+    "Comments",
+  ];
+
+  const rows = currentRows.map((item) => [
     <img
       key={`delete-${item.id}`}
       src="/DeleteButton.svg"
@@ -95,13 +117,16 @@ export default function AdminView() {
       className={styles.deleteButton}
       onClick={() => handleDelete(item.id)}
     />,
-    item.guest_name,
     item.is_attending ? "Yes" : "No",
+    item.guest_name,
+    item.phone_number || "N/A",
     item.plus_ones.length > 0
       ? `${item.plus_ones.length} (${item.plus_ones
           .map((p) => p.plus_one_name)
           .join(", ")})`
       : "None",
+    item.allergies || "None",
+    item.comments || "None",
   ]);
 
   return (
@@ -148,6 +173,13 @@ export default function AdminView() {
         </div>
 
         <div className={styles.tableSection}>
+          {rsvpData.length > 0 && ( // Only show Pagination if there is data
+            <Pagination
+              currentPage={currentPage}
+              totalPages={Math.ceil(rsvpData.length / rowsPerPage)}
+              onPageChange={handlePageChange}
+            />
+          )}
           <Table columns={columns} rows={rows} />
         </div>
       </div>

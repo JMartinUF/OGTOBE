@@ -1,0 +1,30 @@
+/* File Location: src/components/Pagination/Pagination.module.css */
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.button {
+  margin: 0 5px;
+  padding: 5px 10px;
+  border: none;
+  background-color: #1e783c;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+  box-shadow: 0 0.3125rem 0.9375rem rgba(0, 0, 0, 0.3), 0 0 0.9375rem #1e783c;
+}
+
+.button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.info {
+  margin: 0 10px;
+  font-size: 14px;
+  font-weight: bold;
+}

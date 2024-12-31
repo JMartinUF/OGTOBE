@@ -8,6 +8,8 @@ To start the development server, use the following command:
 
 'npm run dev'
 
+- need to get hex codes for colors and all nec document get a vibe (chill, elagant... photos)!
+
 ## Day 1:
 
 What I did:
@@ -54,8 +56,12 @@ What I did:
 
 ## Day 5:
 
+What I did:
+
 - I changed everything that isn't px to rem for futureproofing.
 - Tested out 150 fake Guests with various other attendees, here is the sql script:
+
+Run this command in nhost.ios SQL Editor
 
 #### DO $$
 
@@ -75,13 +81,33 @@ What I did:
 
 #### remaining_plus_ones := LEAST(FLOOR(RANDOM() \* 5), total_guests - rsvp_count - 1);
 
-#### INSERT INTO rsvp (guest_name, is_attending, created_at)
+#### INSERT INTO rsvp (guest_name, is_attending, phone_number, allergies, comments, created_at)
 
 #### VALUES (
 
 #### 'Guest ' || (rsvp_count + 1),
 
 #### CASE WHEN RANDOM() < 0.5 THEN TRUE ELSE FALSE END,
+
+#### '405-' || LPAD(FLOOR(RANDOM() \* 9000000)::TEXT, 7, '0'), -- Random phone number
+
+#### CASE
+
+#### WHEN RANDOM() < 0.3 THEN 'Allergy to peanuts'
+
+#### WHEN RANDOM() < 0.6 THEN 'Lactose intolerant'
+
+#### ELSE NULL
+
+#### END, -- Random allergies or NULL
+
+#### CASE
+
+#### WHEN RANDOM() < 0.5 THEN 'Excited for the event!'
+
+#### ELSE NULL
+
+#### END, -- Random comments or NULL
 
 #### NOW()
 
@@ -112,3 +138,14 @@ What I did:
 #### END LOOP;
 
 #### END $$;
+
+- need to get hex codes for colors and all nec document get a vibe (chill, elagant... photos)!
+
+## Day 6:
+
+What I did:
+
+- Added a phone number, allergies, and a comments input to the rsvp guest page.
+- In the Admin page I added that data to the table.
+- I want to now add pagination.
+- Cool thing to add would be text notifications sent to the users phone whenever they RSVP.
