@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
@@ -18,8 +18,8 @@ export default function Header() {
   return (
     <header className={styles.header}>
       <Link href="/" className={styles.headerLink}>
-        <h1>Joshua & Olivia</h1>
-        <p>MARCH 13, 2026</p>
+        <h1>OLIVIA & JOSHUA</h1>
+        <p>MARCH 13, 2026 • GUTHRIE, OK</p>
         <p>{daysToGo} DAYS TO GO!</p>
       </Link>
     </header>

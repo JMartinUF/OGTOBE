@@ -1,12 +1,15 @@
 /* File Location: src/components/navbar/navbar.module.css */
 
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap");
+
 .navbar {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 10px 20px;
+  padding: 0.625rem 1.25rem;
   position: relative;
   z-index: 1000;
+  font-family: "EB Garamond", serif;
 }
 
 /* Adjust Navbar for Mobile View */
@@ -21,11 +24,12 @@
 .navListDesktop {
   display: flex;
   justify-content: center;
-  gap: 1.25rem;
+  gap: 2.25rem;
   list-style: none;
   width: 100%;
   margin: 0;
   padding: 0;
+  font-family: "EB Garamond", serif;
 }
 
 /* Hidden by Default in Mobile View */
@@ -46,6 +50,7 @@
   list-style: none;
   box-shadow: 0 0.25rem 0.375rem rgba(0, 0, 0, 0.1);
   margin: 0;
+  font-family: "EB Garamond", serif;
 }
 
 /* Navbar Items */
@@ -55,6 +60,7 @@
   padding: 0.625rem 0;
   color: white;
   border-bottom: 0.0625rem solid #444;
+  font-family: "EB Garamond", serif;
 }
 
 .navItem:last-child {
@@ -62,8 +68,8 @@
 }
 
 .navItem a {
-  text-decoration: black; /* Remove underline from links */
-  color: inherit; /* Keep the color consistent with the parent */
+  text-decoration: none;
+  color: inherit;
 }
 
 /* Menu Button for Mobile */

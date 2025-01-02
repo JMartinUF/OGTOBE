@@ -1,5 +1,7 @@
 /* File Location: src/components/modal/modal.module.css */
 
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap");
+
 .overlay {
   position: fixed;
   top: 0;
@@ -11,6 +13,7 @@
   justify-content: center;
   align-items: center;
   z-index: 1000;
+  font-family: "EB Garamond", serif;
 }
 
 .modal {
@@ -24,6 +27,7 @@
   text-align: center;
   box-shadow: 0 0 1rem rgba(30, 120, 60, 0.5), 0 0 1.5rem #1e783c;
   animation: glow 1.5s infinite alternate;
+  font-family: "EB Garamond", serif;
 }
 
 .closeButton {
@@ -35,15 +39,16 @@
   font-size: 1.5rem;
   color: white;
   cursor: pointer;
+  font-family: "EB Garamond", serif;
 }
 
 .content {
   margin-top: 1.25rem;
   text-align: center;
   font-size: 1rem;
+  font-family: "EB Garamond", serif;
 }
 
-/* Add glow animation */
 @keyframes glow {
   from {
     box-shadow: 0 0 0.5rem rgba(30, 120, 60, 0.5), 0 0 1rem #1e783c;

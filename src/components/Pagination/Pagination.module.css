@@ -1,21 +1,25 @@
 /* File Location: src/components/Pagination/Pagination.module.css */
 
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap");
+
 .pagination {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 20px 0;
+  margin: 1.25rem 0;
+  font-family: "EB Garamond", serif;
 }
 
 .button {
-  margin: 0 5px;
-  padding: 5px 10px;
+  margin: 0 0.3125rem;
+  padding: 0.3125rem 0.625rem;
   border: none;
   background-color: #1e783c;
   color: white;
   cursor: pointer;
-  border-radius: 5px;
+  border-radius: 0.3125rem;
   box-shadow: 0 0.3125rem 0.9375rem rgba(0, 0, 0, 0.3), 0 0 0.9375rem #1e783c;
+  font-family: "EB Garamond", serif;
 }
 
 .button:disabled {
@@ -24,7 +28,8 @@
 }
 
 .info {
-  margin: 0 10px;
-  font-size: 14px;
+  margin: 0 0.625rem;
+  font-size: 0.875rem;
   font-weight: bold;
+  font-family: "EB Garamond", serif;
 }

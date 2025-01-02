@@ -15,7 +15,7 @@ export default function qanda() {
 
       {/* Main Content */}
       <main className={styles.main}>
-        <h1 className={styles.heading}>qanda</h1>
+        <h1 className={styles.heading}>Q + A</h1>
         <p className={styles.text}>
           Welcome to the qanda page! Ask any questions here.
         </p>
