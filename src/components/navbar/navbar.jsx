@@ -75,7 +75,7 @@ export default function Navbar() {
           <Link href="/travel">Travel</Link>
         </li>
         <li className={styles.navItem}>
-          <Link href="/thingstodo">Things to Do</Link>
+          <Link href="/timeline">Timeline</Link>
         </li>
         <li className={styles.navItem}>
           <Link href="/registry">Registry</Link>

@@ -149,3 +149,11 @@ What I did:
 - In the Admin page I added that data to the table.
 - I want to now add pagination.
 - Cool thing to add would be text notifications sent to the users phone whenever they RSVP.
+
+## Day 7:
+
+What I did:
+
+- Added more styling changes and changed out the Things to do, to Timeline.
+- Added a real Registry to our app! Just need to figure out what all we want/need.
+- Added a favicon, didn't realize I didn't have one.

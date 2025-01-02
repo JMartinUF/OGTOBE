@@ -1,5 +1,7 @@
 /* File Location: src/app/rsvp/guestView.module.css */
 
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap");
+
 .container {
   display: flex;
   flex-direction: column;
@@ -10,13 +12,14 @@
   max-width: 37.5rem;
   margin: 0 auto;
   box-shadow: 0 0.25rem 0.625rem rgba(0, 0, 0, 0.1);
+  font-family: "EB Garamond", serif; /* Applied EB Garamond to the container */
 }
 
 .heading {
   font-size: 2.5rem;
   margin-bottom: 1.25rem;
   color: var(--blue);
-  font-family: "Georgia", serif;
+  font-family: "EB Garamond", serif; /* Changed from Georgia to EB Garamond */
   text-align: center;
 }
 
@@ -24,7 +27,7 @@
   font-size: 1.2rem;
   line-height: 1.6;
   color: var(--gray);
-  font-family: "Arial", sans-serif;
+  font-family: "EB Garamond", serif; /* Changed from Arial to EB Garamond */
   text-align: center;
   margin-bottom: 1.875rem;
 }
@@ -40,6 +43,7 @@
   font-size: 1rem;
   font-weight: bold;
   color: var(--black);
+  font-family: "EB Garamond", serif; /* Applied EB Garamond */
 }
 
 .input,
@@ -51,6 +55,7 @@
   border: 0.0625rem solid var(--gray);
   border-radius: 0.3125rem;
   margin-top: 0.3125rem;
+  font-family: "EB Garamond", serif; /* Applied EB Garamond */
 }
 
 .textarea {
@@ -68,6 +73,7 @@
   cursor: pointer;
   transition: background-color 0.3s ease;
   margin-top: 0.625rem;
+  font-family: "EB Garamond", serif; /* Applied EB Garamond */
 }
 
 .button:hover {
@@ -82,6 +88,7 @@
   font-size: 1.2rem;
   color: var(--blue);
   margin-bottom: 0.625rem;
+  font-family: "EB Garamond", serif; /* Applied EB Garamond */
 }
 
 .additionalNames ul {
@@ -93,4 +100,5 @@
   font-size: 1rem;
   color: var(--black);
   margin-bottom: 0.3125rem;
+  font-family: "EB Garamond", serif; /* Applied EB Garamond */
 }

@@ -1,11 +1,14 @@
 /* File Location: src/components/header/header.module.css */
 
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap");
+
 .header {
   background-color: #1e783c;
   color: var(--white);
   text-align: center;
   padding: 1.25rem;
   box-shadow: 0 0.3125rem 0.9375rem rgba(0, 0, 0, 0.3), 0 0 0.9375rem #1e783c;
+  font-family: "EB Garamond", serif;
 }
 
 .headerLink {
@@ -21,6 +24,7 @@
 .header h1 {
   font-size: 2rem;
   margin: 0;
+  padding-bottom: 0.5rem;
 }
 
 .header p {
